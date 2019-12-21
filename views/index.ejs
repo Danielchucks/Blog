@@ -1,0 +1,19 @@
+<%- include('partials/header'); -%>
+
+<h1>Home Page</h1>
+
+<% blogs.forEach (function(blog) { %>
+   <div>
+      <h2> <%=blog.title %> </h2>
+      <img src="<%= blog.image %>" alt="">
+      <span><%= blog.created %></span>
+      <!--To limit the string to display in your blog home page 
+      use the method subString(0, 100) or slice(0, 101)-->
+      <p><%= blog.body.substring(0, 100) %>...</p>
+      <a href="/blogs/<%= blog._id %>">Read More</a>
+   </div>
+
+<% }); %>
+
+
+<%- include('partials/footer'); -%>
